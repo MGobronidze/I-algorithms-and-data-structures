@@ -111,9 +111,10 @@ def search_element(lst, target):
     if lst[0] == target:
         return True
     return search_element(lst[1:], target)
-
+print("search an eelemnet ")
 print(search_element([1, 2, 3, 4, 5], 3)) 
 print(search_element([1, 2, 3, 4, 5], 6)) 
+print("-------")
 
 #5
 def is_sorted(lst):
