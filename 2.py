@@ -40,3 +40,23 @@ def find_min_max(A):
 
     return min_elem, max_elem
 print(find_min_max(l1))
+
+def fibonacci_dp(n, memo=None):
+    # Create memo dictionary on first call
+    if memo is None:
+        memo = {}
+
+    # If already computed, return stored value
+    if n in memo:
+        return memo[n]
+
+    # Base cases
+    if n == 0:
+        return 0
+    elif n == 1:
+        return 1
+
+    # Compute and store result
+    memo[n] = fibonacci_dp(n - 1, memo) + fibonacci_dp(n - 2, memo)
+
+    return memo[n]
