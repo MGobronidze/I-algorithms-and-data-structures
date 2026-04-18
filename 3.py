@@ -1,15 +1,15 @@
 import math
 # იტერაციული ორობითი ძებნა
-# def binarySearch(arr, low, high, x):
-#     while low <= high:
-#         mid = low + (high - low) // 2
-#         if arr[mid] == x:
-#             return mid
-#         elif arr[mid] < x:
-#             low = mid + 1
-#         else:
-#             high = mid - 1
-#     return -1
+def binarySearch(arr, low, high, x):
+    while low <= high:
+        mid = low + (high - low) // 2
+        if arr[mid] == x:
+            return mid
+        elif arr[mid] < x:
+            low = mid + 1
+        else:
+            high = mid - 1
+    return -1
 
 # if __name__ == '__main__':
 #     arr = [2, 3, 4, 10, 40]
@@ -57,16 +57,16 @@ set = ['a', 'b', 'c', 'd']
 printPowerSet(set, 4)
 
 
-# # ყველა ქვესიმრავლეთა სიმრავლის პოვნა, რეკურსიული ალგორითმი
-# def genSubsets(L):
-#     res = []
-#     if len(L) == 0:
-#         return [[]]  # ცარიელი სიის სია
-#     smaller = genSubsets(L[:-1])  # ყველა ქვემონაცემი ბოლო ელემენტის გარეშე
-#     extra = L[-1:]  # მხოლოდ ბოლო ელემენტი
-#     new = []
-#     for small in smaller:
-#         new.append(small + extra)  # ყველა მცირე შედეგისთვის, დაამატე ბოლო ელემენტი
-#     return smaller + new  # გააერთიანე შედეგები
+# ყველა ქვესიმრავლეთა სიმრავლის პოვნა, რეკურსიული ალგორითმი
+def genSubsets(L):
+    res = []
+    if len(L) == 0:
+        return [[]]  # ცარიელი სიის სია
+    smaller = genSubsets(L[:-1])  # ყველა ქვემონაცემი ბოლო ელემენტის გარეშე
+    extra = L[-1:]  # მხოლოდ ბოლო ელემენტი
+    new = []
+    for small in smaller:
+        new.append(small + extra)  # ყველა მცირე შედეგისთვის, დაამატე ბოლო ელემენტი
+    return smaller + new  # გააერთიანე შედეგები
 
-# print(genSubsets(['a', 'b']))
+print(genSubsets(['a', 'b']))
